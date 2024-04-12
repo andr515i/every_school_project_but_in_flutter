@@ -1,6 +1,8 @@
+import 'package:every_school_project_but_in_flutter/bloc/blocs/bmi_calculator_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/counter_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/random_bloc.dart';
 import 'package:every_school_project_but_in_flutter/screens/CameraScreen.dart';
+import 'package:every_school_project_but_in_flutter/screens/bmi_calculator_screen.dart';
 import 'package:every_school_project_but_in_flutter/screens/counterScreen.dart';
 import 'package:every_school_project_but_in_flutter/screens/galleryScreen.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
+          BlocProvider(create: ((context) => BmiCalculatorBloc())),
           BlocProvider(create: ((context) => CounterChangeBloc())),
           BlocProvider(create: ((context) => RandomNumberBloc())),
         ],
@@ -49,20 +52,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 1,
       child: Scaffold(
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.camera)), // goto camera
-              Tab(icon: Icon(Icons.photo)), // goto gallery
+              Tab(icon: Icon(Icons.fastfood)), // goto camera
+              // Tab(icon: Icon(Icons.camera)), // goto camera
+              // Tab(icon: Icon(Icons.photo)), // goto gallery
             ],
           ),
         ),
         body: const TabBarView(
           children: [
-            CameraScreen(), // show camera
-            GalleryScreen(), // show gallery
+            BmiCalculatorScreen()
+            // CameraScreen(), // show camera
+            // GalleryScreen(), // show gallery
           ],
         ),
       ),
