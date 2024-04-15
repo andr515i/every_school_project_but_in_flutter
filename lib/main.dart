@@ -1,7 +1,9 @@
+import 'package:every_school_project_but_in_flutter/bloc/blocs/LeDice_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/bmi_calculator_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/counter_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/random_bloc.dart';
 import 'package:every_school_project_but_in_flutter/screens/CameraScreen.dart';
+import 'package:every_school_project_but_in_flutter/screens/LeDiceScreen.dart';
 import 'package:every_school_project_but_in_flutter/screens/bmi_calculator_screen.dart';
 import 'package:every_school_project_but_in_flutter/screens/counterScreen.dart';
 import 'package:every_school_project_but_in_flutter/screens/galleryScreen.dart';
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: ((context) => BmiCalculatorBloc())),
           BlocProvider(create: ((context) => CounterChangeBloc())),
           BlocProvider(create: ((context) => RandomNumberBloc())),
+          BlocProvider(create: ((context) => LeDiceBloc())),
         ],
         child: MaterialApp(
           title: 'Every Project in Flutter',
@@ -52,22 +55,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 1,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.fastfood)), // goto camera
-              // Tab(icon: Icon(Icons.camera)), // goto camera
-              // Tab(icon: Icon(Icons.photo)), // goto gallery
+              Tab(icon: Icon(Icons.fastfood)), // goto bmi screen
+              Tab(icon: Icon(Icons.six_ft_apart)), // goto dice thrower
             ],
           ),
         ),
         body: const TabBarView(
           children: [
-            BmiCalculatorScreen()
-            // CameraScreen(), // show camera
-            // GalleryScreen(), // show gallery
+            BmiCalculatorScreen(),
+            LeDiceScreen(),
           ],
         ),
       ),

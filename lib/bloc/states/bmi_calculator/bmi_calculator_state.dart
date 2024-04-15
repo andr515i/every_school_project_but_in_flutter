@@ -1,9 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-abstract class IBmiCalculatorState extends Equatable {
-  @override
-  List<Object> get props => [];
-}
+abstract class IBmiCalculatorState extends Equatable {}
 
 class BmiCalculatorState extends IBmiCalculatorState {
   final double weight;
@@ -11,12 +8,13 @@ class BmiCalculatorState extends IBmiCalculatorState {
   final double bmi;
   BmiCalculatorState({this.height = 0, this.weight = 0, this.bmi = 0});
 
-  BmiCalculatorState copyWith(double? weight, double? height) {
-    return BmiCalculatorState(
-        height: height ?? this.height, weight: weight ?? this.weight);
-  }
+  @override
+  List<Object?> get props => [weight, height, bmi];
 
-  BmiCalculatorState calculateBMI(double weight, double height) {
-    return BmiCalculatorState(bmi: (weight / (height * height)));
+  BmiCalculatorState copyWith({double? weight, double? height, double? bmi}) {
+    return BmiCalculatorState(
+        height: height ?? this.height,
+        weight: weight ?? this.weight,
+        bmi: bmi ?? this.bmi);
   }
 }
