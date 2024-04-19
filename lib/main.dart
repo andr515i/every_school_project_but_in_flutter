@@ -2,11 +2,9 @@ import 'package:every_school_project_but_in_flutter/bloc/blocs/LeDice_bloc.dart'
 import 'package:every_school_project_but_in_flutter/bloc/blocs/bmi_calculator_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/counter_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/random_bloc.dart';
-import 'package:every_school_project_but_in_flutter/screens/CameraScreen.dart';
 import 'package:every_school_project_but_in_flutter/screens/LeDiceScreen.dart';
 import 'package:every_school_project_but_in_flutter/screens/bmi_calculator_screen.dart';
 import 'package:every_school_project_but_in_flutter/screens/counterScreen.dart';
-import 'package:every_school_project_but_in_flutter/screens/galleryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
