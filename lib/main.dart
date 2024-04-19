@@ -3,6 +3,7 @@ import 'package:every_school_project_but_in_flutter/bloc/blocs/bmi_calculator_bl
 import 'package:every_school_project_but_in_flutter/bloc/blocs/counter_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/blocs/random_bloc.dart';
 import 'package:every_school_project_but_in_flutter/screens/LeDiceScreen.dart';
+import 'package:every_school_project_but_in_flutter/screens/balls_and_cup_screen.dart';
 import 'package:every_school_project_but_in_flutter/screens/bmi_calculator_screen.dart';
 import 'package:every_school_project_but_in_flutter/screens/counterScreen.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
           initialRoute: "/",
           routes: {
             "/counter": (context) => const CounterScreen(),
+            "/BmiCalculator": (context) => const BmiCalculatorScreen(),
+            "/LeDice": (context) => const LeDiceScreen(),
+            "/BaC": (context) => const BallAndCupScreen(),
           },
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -53,13 +57,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
               Tab(icon: Icon(Icons.fastfood)), // goto bmi screen
               Tab(icon: Icon(Icons.six_ft_apart)), // goto dice thrower
+              Tab(icon: Icon(Icons.games)), // goto ball and cups
             ],
           ),
         ),
@@ -67,9 +72,44 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             BmiCalculatorScreen(),
             LeDiceScreen(),
+            BallAndCupScreen(),
           ],
         ),
       ),
     );
+
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: const Text("Every app"),
+    //   ),
+    //   drawer: Drawer(
+    //       child: ListView(
+    //     padding: EdgeInsets.zero,
+    //     children: [
+    //       const DrawerHeader(
+    //         decoration: BoxDecoration(color: Colors.blue),
+    //         child: Text("drawer header"),
+    //       ),
+    //       ListTile(
+    //         title: const Text("Bmi Calculator"),
+    //         onTap: () {
+    //           Navigator.of(context).pushNamed("/BmiCalculator");
+    //         },
+    //       ),
+    //       ListTile(
+    //         title: const Text("Le Dice Thrower"),
+    //         onTap: () {
+    //           Navigator.of(context).pushNamed("/LeDice");
+    //         },
+    //       ),
+    //       ListTile(
+    //         title: const Text("Ball and Cups"),
+    //         onTap: () {
+    //           Navigator.of(context).pushNamed("/BaC");
+    //         },
+    //       ),
+    //     ],
+    //   )),
+    // );
   }
 }

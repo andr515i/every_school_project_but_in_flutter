@@ -1,4 +1,3 @@
-
 import 'package:every_school_project_but_in_flutter/bloc/blocs/bmi_calculator_bloc.dart';
 import 'package:every_school_project_but_in_flutter/bloc/events/bmi_calculator/bmi_calculator_event.dart';
 import 'package:every_school_project_but_in_flutter/bloc/states/bmi_calculator/bmi_calculator_state.dart';
@@ -21,6 +20,7 @@ class BmiCalculatorScreenState extends State<BmiCalculatorScreen> {
 
   @override
   void initState() {
+    debugPrint("BmiCalculatorScreenState initstate");
     super.initState();
   }
 
@@ -37,7 +37,6 @@ class BmiCalculatorScreenState extends State<BmiCalculatorScreen> {
         debugPrint("listening on bmi... ${state.bmi}");
         if (state.bmi > 0) {
           String group = "something went wrong...";
-          // Replace with if-else logic since Dart does not support switch ranges
           if (state.bmi < 18.5) {
             group = "body weight deficit";
           } else if (state.bmi >= 18.5 && state.bmi < 24) {
@@ -53,6 +52,7 @@ class BmiCalculatorScreenState extends State<BmiCalculatorScreen> {
           } else {
             debugPrint("BMI is out of expected range.");
           }
+          debugPrint("your group is:  $group");
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(
                 "Your BMI is: ${state.bmi.toStringAsFixed(2)}, which falls into the category: $group"),
@@ -88,7 +88,7 @@ class BmiCalculatorScreenState extends State<BmiCalculatorScreen> {
                           BlocProvider.of<BmiCalculatorBloc>(context).add(
                               WeightChangedEvent(weight: double.parse(weight)));
                         }),
-                    const Text('height:r'),
+                    const Text('height:'),
                     TextFormField(
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(
