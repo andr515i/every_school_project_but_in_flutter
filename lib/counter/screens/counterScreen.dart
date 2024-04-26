@@ -1,13 +1,13 @@
-import 'package:every_school_project_but_in_flutter/bloc/blocs/counter_bloc.dart';
-import 'package:every_school_project_but_in_flutter/bloc/blocs/random_bloc.dart';
-import 'package:every_school_project_but_in_flutter/bloc/events/random_event/random_number_event.dart';
-import 'package:every_school_project_but_in_flutter/bloc/states/counter_state/counter_change_state.dart';
-import 'package:every_school_project_but_in_flutter/bloc/states/random_state/random_state.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/counter_bloc.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/random_bloc.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/random_number_event.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/counter_change_state.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/random_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
-import '../bloc/events/counter_event/counter_change_event.dart';
+import '../bloc/counter_change_event.dart';
 
 class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});

@@ -1,11 +1,12 @@
-import 'package:every_school_project_but_in_flutter/bloc/blocs/LeDice_bloc.dart';
-import 'package:every_school_project_but_in_flutter/bloc/blocs/bmi_calculator_bloc.dart';
-import 'package:every_school_project_but_in_flutter/bloc/blocs/counter_bloc.dart';
-import 'package:every_school_project_but_in_flutter/bloc/blocs/random_bloc.dart';
-import 'package:every_school_project_but_in_flutter/screens/LeDiceScreen.dart';
-import 'package:every_school_project_but_in_flutter/screens/balls_and_cup_screen.dart';
-import 'package:every_school_project_but_in_flutter/screens/bmi_calculator_screen.dart';
-import 'package:every_school_project_but_in_flutter/screens/counterScreen.dart';
+import 'package:every_school_project_but_in_flutter/LeDiceThrower/bloc/LeDice_bloc.dart';
+import 'package:every_school_project_but_in_flutter/Bmi_calculator/bloc/bmi_calculator_bloc.dart';
+import 'package:every_school_project_but_in_flutter/balls_and_cup/bloc/cups_and_ball_bloc.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/counter_bloc.dart';
+import 'package:every_school_project_but_in_flutter/counter/bloc/random_bloc.dart';
+import 'package:every_school_project_but_in_flutter/LeDiceThrower/screens/LeDiceScreen.dart';
+import 'package:every_school_project_but_in_flutter/balls_and_cup/screens/balls_and_cup_screen.dart';
+import 'package:every_school_project_but_in_flutter/Bmi_calculator/screens/bmi_calculator_screen.dart';
+import 'package:every_school_project_but_in_flutter/counter/screens/counterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: ((context) => CounterChangeBloc())),
           BlocProvider(create: ((context) => RandomNumberBloc())),
           BlocProvider(create: ((context) => LeDiceBloc())),
+          BlocProvider(create: ((context) => CupsAndBallBloc())),
+          
         ],
         child: MaterialApp(
           title: 'Every Project in Flutter',
