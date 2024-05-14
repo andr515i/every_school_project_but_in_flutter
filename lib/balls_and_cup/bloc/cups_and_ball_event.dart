@@ -8,7 +8,7 @@ abstract class GameEvent extends Equatable {
 
 class StartGame extends GameEvent{}
 
-class ShuffleCards extends GameEvent{
+class ShuffleCups extends GameEvent{
 
 }
 

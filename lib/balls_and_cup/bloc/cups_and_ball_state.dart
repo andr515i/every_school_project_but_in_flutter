@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 
 abstract class GameState extends Equatable {
   const GameState();
+  @override
   List<Object> get props => [];
 }
 
@@ -18,5 +19,8 @@ class ShufflingCups extends GameState {} // currently shuffling.
 
 class GuessMade extends GameState {
   final bool isCorrect;
+
+  bool get guess => isCorrect;
+
   const GuessMade(this.isCorrect);
 }

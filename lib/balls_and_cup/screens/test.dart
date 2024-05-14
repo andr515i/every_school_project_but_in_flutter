@@ -5,13 +5,15 @@ import 'dart:math';
 //https://dartpad.dev/?id=17b4a8c747aeb2583a90ca865e7abff6
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: DiceCodeScreen(),
     );
   }
